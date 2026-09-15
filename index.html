@@ -1,0 +1,614 @@
+[6:09 p.m., 15/9/2026] Soni💜: <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aprende HTML en GitHub</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            color: white;
+
+            /* FONDO BONITO */
+            background:
+                radial-gradient(circle at top left, #6c63ff, transparent 35%),
+                radial-gradient(circle at bottom right, #00c6ff, transparent 35%),
+                linear-gradient(135deg, #10002b, #240046, #3c096c);
+
+            min-height: 100vh;
+        }
+
+        /* ENCABEZADO */
+
+        header {
+            width: 100%;
+            padding: 20px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(0,0,0,0.25);
+            backdrop-filter: blur(10px);
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #00e5ff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+
+        /* PORTADA */
+
+        .hero {
+            min-height: 430px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 50px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #00e5ff;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.6;
+            color: #e5e5e5;
+        }
+
+        .boton {
+            margin-top: 25px;
+
+            padding: 14px 28px;
+
+            border: none;
+            border-radius: 30px;
+
+            background: #00e5ff;
+            color: #16002b;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            transform: scale(1.07);
+        }
+
+
+        /* TUTORIAL */
+
+        .tutorial {
+            padding: 60px 8%;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .titulo h2 {
+            font-size: 34px;
+        }
+
+        .titulo p {
+            margin-top: 10px;
+            color: #ddd;
+        }
+
+
+        /* TARJETAS */
+
+        .pasos {
+            display: grid;
+
+            grid-template-columns:
+            repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .paso {
+
+            background: rgba(255,255,255,0.10);
+
+            border: 1px solid rgba(255,255,255,0.20);
+
+            border-radius: 20px;
+
+            padding: 30px;
+
+            backdrop-filter: blur(10px);
+
+            transition: 0.3s;
+        }
+
+        .paso:hover {
+            transform: translateY(-8px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .numero {
+
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #00e5ff;
+
+            color: #16002b;
+
+            font-size: 22px;
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+        .paso h3 {
+            margin-bottom: 12px;
+        }
+
+        .paso p {
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+
+        /* CÓDIGO */
+
+        .codigo {
+
+            margin-top: 50px;
+
+            background: #0b0b16;
+
+            border-radius: 15px;
+
+            padding: 25px;
+
+            overflow-x: auto;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .codigo h3 {
+            margin-bottom: 15px;
+            color: #00e5ff;
+        }
+
+        pre {
+            color: #8be9fd;
+            line-height: 1.6;
+        }
+
+
+        /* CONSEJO */
+
+        .consejo {
+
+            margin: 60px auto;
+
+            max-width: 900px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            background: rgba(255,255,255,0.10);
+
+            border-radius: 20px;
+
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .consejo h2 {
+            color: #00e5ff;
+            margin-bottom: 15px;
+        }
+
+        .consejo p {
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+
+        /* PIE */
+
+        footer {
+
+            text-align: center;
+
+            padding: 30px;
+
+            background: rgba(0,0,0,0.3);
+
+            color: #ccc;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .pasos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .pasos {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- MENÚ -->
+
+<header>
+
+    <div class="logo">
+        💻 <span>HTML</span> → GitHub
+    </div>
+
+    <nav>
+
+        <a href="#inicio">
+            Inicio
+        </a>
+
+        <a href="#tutorial">
+            Tutorial
+        </a>
+
+        <a href="#consejo">
+            Consejos
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- PORTADA -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <h1>
+            Sube tu página <span>HTML</span> a GitHub 🚀
+        </h1>
+
+        <p>
+            Aprende paso a paso cómo guardar tu proyecto,
+            crear un repositorio y publicar tu página web
+            utilizando GitHub Pages.
+        </p>
+
+        <button class="boton" onclick="irTutorial()">
+            📚 Comenzar tutorial
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- TUTORIAL -->
+
+<section class="tutorial" id="tutorial">
+
+    <div class="titulo">
+
+        <h2>
+            📖 Tutorial paso a paso
+        </h2>
+
+        <p>
+            Sigue estos pasos para publicar tu proyecto.
+        </p>
+
+    </div>
+
+
+    <div class="pasos">
+
+
+        <!-- PASO 1 -->
+
+        <div class="paso">
+
+            <div class="numero">
+                1
+            </div>
+
+            <h3>
+                👤 Crear una cuenta
+            </h3>
+
+            <p>
+                Entra a GitHub y crea una cuenta.
+                Después inicia sesión para poder
+                crear tus repositorios.
+            </p>
+
+        </div>
+
+
+
+        <!-- PASO 2 -->
+
+        <div class="paso">
+
+            <div class="numero">
+                2
+            </div>
+
+            <h3>
+                📁 Crear repositorio
+            </h3>
+
+            <p>
+                Pulsa en "New repository".
+                Coloca un nombre para tu proyecto
+                y crea el repositorio.
+            </p>
+
+        </div>
+
+
+
+        <!-- PASO 3 -->
+
+        <div class="paso">
+
+            <div class="numero">
+                3
+            </div>
+
+            <h3>
+                💻 Preparar HTML
+            </h3>
+
+            <p>
+                Guarda tu página principal con el nombre
+                <b>index.html</b>.
+                También puedes agregar tus archivos CSS,
+                JavaScript e imágenes.
+            </p>
+
+        </div>
+
+
+
+        <!-- PASO 4 -->
+
+        <div class="paso">
+
+            <div class="numero">
+                4
+            </div>
+
+            <h3>
+                ⬆️ Subir archivos
+            </h3>
+
+            <p>
+                Dentro del repositorio selecciona
+                "Add file" y después "Upload files".
+                Arrastra tus archivos y confirma los cambios.
+            </p>
+
+        </div>
+
+
+
+        <!-- PASO 5 -->
+
+        <div class="paso">
+
+            <div class="numero">
+                5
+            </div>
+
+            <h3>
+                🌐 Activar Pages
+            </h3>
+
+            <p>
+                Ve a Settings → Pages.
+                Selecciona la rama principal y guarda
+                la configuración para publicar tu página.
+            </p>
+
+        </div>
+
+
+
+        <!-- PASO 6 -->
+
+        <div class="paso">
+
+            <div class="numero">
+                6
+            </div>
+
+            <h3>
+                🎉 Ver tu página
+            </h3>
+
+            <p>
+                GitHub generará una dirección web.
+                Ábrela en tu navegador y podrás ver
+                tu página HTML publicada.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- EJEMPLO -->
+
+    <div class="codigo">
+
+        <h3>
+            💻 Ejemplo de un archivo index.html
+        </h3>
+
+<pre>
+&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Mi página web&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;¡Hola GitHub! 🚀&lt;/h1&gt;
+
+    &lt;p&gt;
+        Esta es mi primera página publicada.
+    &lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+
+    </div>
+
+</section>
+
+
+
+<!-- CONSEJO -->
+
+<section class="consejo" id="consejo">
+
+    <h2>
+        💡 Consejo
+    </h2>
+
+    <p>
+        Antes de subir tu proyecto revisa que el archivo
+        principal se llame <b>index.html</b> y que las rutas
+        de tus imágenes, CSS y JavaScript sean correctas.
+        Así evitarás errores cuando publiques tu página.
+    </p>
+
+</section>
+
+
+
+<!-- PIE -->
+
+<footer>
+
+    <p>
+        💻 Tutorial HTML → GitHub
+    </p>
+
+    <p>
+        © 2026 | Proyecto educativo
+    </p>
+
+</footer>
+
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function irTutorial() {
+
+    document
+        .getElementById("tutorial")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+</script>
+
+
+</body>
+</html>
